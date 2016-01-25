@@ -25,6 +25,7 @@ RUN curl https://get.docker.com/builds/Linux/x86_64/docker-latest -o /usr/local/
     && composer global require phploc/phploc \
     && composer global require phpmd/phpmd \
     && composer global require squizlabs/php_codesniffer \
+    && composer global require jakub-onderka/php-parallel-lint \
     && cp -rs /root/.composer/vendor/bin /usr/local/bin/
 
 
