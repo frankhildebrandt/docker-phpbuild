@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) iconv mcrypt \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd zip \
-    && apt-get clear
+    && apt-get clean
 
 RUN curl https://get.docker.com/builds/Linux/x86_64/docker-latest -o /usr/local/bin/docker \
     && chmod +x /usr/local/bin/docker \
@@ -21,7 +21,6 @@ RUN curl https://get.docker.com/builds/Linux/x86_64/docker-latest -o /usr/local/
     && composer global require phpunit/phpunit \
     && composer global require phpunit/dbunit \
     && composer global require phing/phing \
-    && composer global require phpdocumentor/phpdocumentor \
     && composer global require sebastian/phpcpd \
     && composer global require phploc/phploc \
     && composer global require phpmd/phpmd \
